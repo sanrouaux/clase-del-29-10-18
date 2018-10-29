@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1540851309 source:c:\users\sanro\onedrive\escritorio\trabajo 29-10\clase-del-29-10-18\archivoscsv\main.c
+	<stdio.h>
+	<stdlib.h>
+	"usuario.h"
+
+1540851262 c:\users\sanro\onedrive\escritorio\trabajo 29-10\clase-del-29-10-18\archivoscsv\usuario.h
+
+1540851440 source:c:\users\sanro\onedrive\escritorio\trabajo 29-10\clase-del-29-10-18\archivoscsv\usuario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"usuario.h"
+

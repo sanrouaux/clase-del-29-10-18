@@ -6,20 +6,12 @@ typedef struct
 {
     char name[500];
     char lastName[500];
-    char id[500];
+    int id;
     char isEmpty[500];
 
 }eUsuario;
 
 
-eUsuario constructor(char* name, char* lastName, char* id, char isEmpty)
-{
-    eUsuario usuario;
-    usuario.name = name;
-    usuario.lastName = lastName;
-    usuario.id = id;
-    usuario.isEmpty =
-
-}
+eUsuario constructor(char*, char*, char*, char*);
 
 #endif // USUARIO_H_INCLUDED

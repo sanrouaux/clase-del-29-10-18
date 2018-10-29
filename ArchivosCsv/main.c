@@ -1,39 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-
+#include "usuario.h"
 
 
 int main()
 {
-   char name[500], lastName[500], id[500],isEmpty[500];
-   int cont=1;
+    int i = 0;
 
-   FILE * pFile;
+    char name[500], lastName[500], id[500],isEmpty[500];
+    eUsuario auxUsuario;
 
-   pFile = fopen ("MOCK_DATA_ext.csv", "r");
+    eUsuario* pArrayUsuarios;
+    pArrayUsuarios = (eUsuario*)malloc(sizeof(eUsuario)*10);
 
-   while(!feof(pFile))
-   {
+    FILE* pFile;
+    pFile = fopen("MOCK_DATA.csv", "r");
 
-       if(cont %250 == 0)
-       {
-           system("pause");
-       }
-       cont++;
+    fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, name, lastName,isEmpty);
 
+    while(!feof(pFile))
+    {
+        fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, name, lastName,isEmpty);
 
+        auxUsuario = constructor(name, lastName, id, isEmpty);
 
-       fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, name, lastName,isEmpty);
+        *(pArrayUsuarios + i) = auxUsuario;
+        printf("%d - %s %s - %s\n", (pArrayUsuarios+i)->id, (pArrayUsuarios+i)->name, (pArrayUsuarios+i)->lastName,
+               (pArrayUsuarios+i)->isEmpty);
 
+        i++;
+    }
 
+    fclose(pFile);
 
-
-       printf("%s - %s, %s - %s\n", id, name, lastName, isEmpty);
-
-   }
-
-   fclose(pFile);
-
-   return(0);
+    return(0);
 }
